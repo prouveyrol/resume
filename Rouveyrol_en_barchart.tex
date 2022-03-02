@@ -69,39 +69,78 @@
 
 \makecvtitle % Print the CV title
 
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\vspace{4mm}
+\section{Education}
+\subsection{Academic}
+\cventry{2015-2016}{Master 2 cybersecurity}{SAFE : Sécurité, Audit, inFormatique légalE}{Université Joseph Fourier}{}{}
+\cventry{2013-2014}{Master 1 computer science}{International program, MoSIG}{Université Joseph Fourier}{}{}
+\cventry{2012-2013}{Bachelor computer science}{Video games conception}{Université du Québec à Chicoutimi}{}{}
+\cventry{2010-2012}{DUT Informatique (French 2 year diploma)}{IUT 2 de Grenoble}{Université Pierre Mendès-France}{\textit{Rank : 10/84}}{}
+\cventry{2007-2010}{Baccalauréat S-SI (Engineering)}{Lycée Ferdinand Buisson}{}{}{}
+\vspace{4mm}
+\subsection{MOOC}
+\cventry{07.2013-09.2013}{Computer Networks}{https://www.coursera.org/}{Washington university's networks course}{\textit{Grade : 96/100}}{}
+\cventry{10.2011-12.2011}{AI-Class}{https://www.ai-class.com/}{Stanford's introductory Artificial Intelligence course}{\textit{Grade : 98/100}}{}
+\vspace{8mm}
 
 %----------------------------------------------------------------------------------------
 %	COMPUTER SKILLS SECTION
 %----------------------------------------------------------------------------------------
 \section{Skills}
-\cvitem{\textbf{System Administration}}{
-\textit{OS} : 10 years experience in managing \textbf{GNU/Linux} and \textbf{BSD} systems, both personally and professionally, using multiple distributions. Some professional experience using and managing Microsoft \textbf{Windows}, AD, GPOs. \newline
-\textit{Monitoring} : Mostly \textbf{Zabbix, ELK, Grafana, Splunk, Prometheus}, some experience using \textbf{Nagios}.\newline
-\textit{Orchestration} : Experience using \textbf{Ansible, Puppet}, along with \textbf{Foreman, Rundeck}. I have deployed \textbf{Kubernetes} clusters and managed their utilization by dev teams.
-}
-\cvitem{\textbf{Virtualization}}{
-Most of my experience is with \textbf{KVM} based solutions, along with \textbf{QEMU} in some instances. I also had the chance to work with \textbf{Xen} and \textbf{VMWare} products.\newline Recently, most of my work had to do with \textbf{Docker/Podman}. I have written numerous Dockerfiles to containerize some web applications, using either \textbf{Docker Compose} or \textbf{Kubernetes}.
-}
-\cvitem{\textbf{Security}}{
-Most of my previous missions were at least related to security. I have driven adoption of \textbf{SIEM} solutions such as \textbf{Rapid7 InsightVM and InsightIDR}. I have managed \textbf{ESET} security solutions in an international company context. I have been in charge of monitoring and responding to incidents with \textbf{Azure Sentinel} worldwide.\newline
-I have experience in malware development and \textbf{pentesting} as well as \textbf{applider cryptograpahy} both in an academic and industry context.
-}
-\cvitem{\textbf{Network}}{
-I have been working with \textbf{PFSense} and \textbf{Fortinet}. I can manage most \textbf{DHCP, DNS} solutions and I have been in charge of managing \textbf{VPN} using \textbf{IPSec, OpenVPN and Wireguard}.\newline
-I can manage \textbf{Nginx, Apache, and HAProxy}.
-}
-\cvitem{\textbf{Cloud}}{
-I have worked with \textbf{Openstack and Kubernetes}, and I have some experience using \textbf{Azure and AWS} services, notably \textbf{S3 and Swift} for which I did some development.\newline I have deployed and maintained \textbf{CEPH} clusters. Bare metal, and in K8s using \textbf{Rook}. 
-}
-\cvitem{\textbf{DevOps}}{
-I have been using \textbf{Git} for the last 10 years, and written \textbf{CI/CD} pipelines with \textbf{Gitlab and Jenkins} for building, testing, auditing and deploying applications.
-}
-\cvitem{\textbf{Development}}{
-While not a developper, I have some experience using \textbf{C++, Python, Bash, Java, ADA and Go}. These were mostly in the context of system administration or debugging. I can do some very basic web development, using \textbf{Flask and Hugo}. I have however written numerous scripts making use of \textbf{REST} APIs.
-}
-\cvitem{\textbf{Soft skills}}{
-I have been driving adoption of security products and uniformization of best practices within an IT context. I have also been managing L1 and L2 support teams, and occasionally had to recruit them. I have been giving some training regarding security best practices, cryptography and version control using Git.
-}
+\centering
+\pgfplotsset{height=4cm,width=15cm}
+\pgfplotsset{xticklabel style={text width=4.8em,align=right}}
+\begin{tikzpicture}
+	\begin{axis}[ybar,
+			enlarge y limits=0,
+			enlarge x limits=0.05,
+			legend style={at={(0.5,-0.2)}, anchor=North, legend columns=-1},
+			symbolic x coords={Bash, Python, OpenStack, Azure, Ceph, Docker, K8S, Ansible, Puppet, HAProxy},
+			symbolic y coords={ X, Basic, Intermediate, Advanced},
+			ymax=Advanced,
+			ymin=X,
+			ytick=data,
+			xtick=data, 
+			grid=both,
+			x tick label style={rotate=35,anchor=east},
+			bar width = 5pt]
+
+		\addplot [fill=s1,draw=s1] coordinates {(Bash,Intermediate)(Python,Advanced)(OpenStack,Intermediate)(Azure,Basic)(Ceph,Intermediate)(Docker,Advanced)(K8S,Basic)(Ansible,Advanced)(Puppet,Intermediate)(HAProxy,Intermediate)};
+	\end{axis}
+\end{tikzpicture}
+
+\pgfplotsset{height=4cm,width=15cm}
+\pgfplotsset{xticklabel style={text width=4.8em,align=right}}
+\begin{tikzpicture}
+	\begin{axis}[ybar,
+			enlarge y limits=0,
+			enlarge x limits=0.05,
+			legend style={at={(0.5,-0.2)}, anchor=North, legend columns=-1},
+			symbolic x coords={Linux, Windows, Networks, VPN, IDS/IPS, Security, Architecture, Monitoring, CI/CD, Policy, Management},
+			symbolic y coords={ X, Basic, Intermediate, Advanced},
+			ymax=Advanced,
+			ymin=X,
+			ytick=data,
+			xtick=data, 
+			grid=both,
+			x tick label style={rotate=35,anchor=east},
+			bar width = 5pt]
+
+		\addplot [fill=s1,draw=s1] coordinates {(Linux,Advanced)(Windows,Basic)(Networks,Advanced)(VPN,Advanced)(IDS/IPS,Advanced)(Security,Advanced)(Architecture,Intermediate)(Monitoring,Advanced)(CI/CD,Intermediate)(Policy,Intermediate)(Management,Basic)};
+	\end{axis}
+\end{tikzpicture}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+\vspace{4mm}
+\section{Languages}
+\cvitemwithcomment{French}{Native}{}
+\cvitemwithcomment{English}{Fluent}{Numerous travels abroad (Irland, UK, US, Canada...) and all work in English}
+\cvitemwithcomment{German}{Basic}{3 years in school}
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
@@ -171,33 +210,6 @@ Feasibility assessment of consumer grade Wi-Fi APs exploitation as a geotracking
 \newline Reverse engineering of consumer grade internet set top boxes to evaluate the feasibility of deploying large scale, privacy threatening malware.
 \newline More details : https://hal.inria.fr/hal-01151446/document
 \newline}
-
-\newpage
-%----------------------------------------------------------------------------------------
-%	LANGUAGES SECTION
-%----------------------------------------------------------------------------------------
-\vspace{4mm}
-\section{Languages}
-\cvitemwithcomment{French}{Native}{}
-\cvitemwithcomment{English}{Fluent}{Numerous travels abroad (Irland, UK, US, Canada...) and all work in English}
-\cvitemwithcomment{German}{Basic}{3 years in school}
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-\vspace{4mm}
-\section{Education}
-\subsection{Academic}
-\cventry{2015-2016}{Master 2 cybersecurity}{SAFE : Sécurité, Audit, inFormatique légalE}{Université Joseph Fourier}{}{}
-\cventry{2013-2014}{Master 1 computer science}{International program, MoSIG}{Université Joseph Fourier}{}{}
-\cventry{2012-2013}{Bachelor computer science}{Video games conception}{Université du Québec à Chicoutimi}{}{}
-\cventry{2010-2012}{DUT Informatique (French 2 year diploma)}{IUT 2 de Grenoble}{Université Pierre Mendès-France}{\textit{Rank : 10/84}}{}
-\cventry{2007-2010}{Baccalauréat S-SI (Engineering)}{Lycée Ferdinand Buisson}{}{}{}
-\vspace{4mm}
-\subsection{MOOC}
-\cventry{07.2013-09.2013}{Computer Networks}{https://www.coursera.org/}{Washington university's networks course}{\textit{Grade : 96/100}}{}
-\cventry{10.2011-12.2011}{AI-Class}{https://www.ai-class.com/}{Stanford's introductory Artificial Intelligence course}{\textit{Grade : 98/100}}{}
-\vspace{8mm}
 
 %\cventry{05.2012-06.2012}{Academic internship}{\textsc{Groupe Folder}}{Voiron}{France}{
 %Debugging and updating of a client support website in .NET.

@@ -1,0 +1,242 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage[scale=0.93]{geometry} % Reduce document margins
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+
+\definecolor{s1}{RGB}{56,115,179}
+\renewcommand*{\namefont}{\fontsize{24}{29}\mdseries\upshape}
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+\usepackage{xpatch}% http://ctan.org/pkg/xpatch
+\xpatchcmd{\cvitem}{#3}{\footnotesize #3}{}{}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Pierre} % Your first name
+\familyname{Rouveyrol} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Curriculum Vitae}
+\address{La Ruelle 3}{1268 Begnins, Suisse}
+\mobile{+41 79 554 78 76}
+%\fax{(000) 111 1113}
+\email{pierre.rouveyrol@protonmail.com}
+%\homepage{https://gitlab.com/Oakenston}{https://gitlab.com/Oakenston} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+\extrainfo{Nationality : Swiss, French}
+%\photo[50pt][0pt]{pictures/portrait} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+\quote{Sysadmin, Infosec, Devops, Open Source, 7 years experience}
+
+\renewcommand*\namefont{\fontsize{25}{48}\selectfont}
+\renewcommand*\sectionfont{\fontsize{14}{24}\selectfont}
+\renewcommand*\subsectionfont{\fontsize{11}{24}\selectfont}
+\renewcommand*\hintfont{\fontsize{10}{24}\selectfont}
+\pgfplotsset{compat=1.15}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\vspace{4mm}
+\section{Education}
+\subsection{Academic}
+\cventry{2015-2016}{Master 2 cybersecurity}{SAFE : Sécurité, Audit, inFormatique légalE}{Université Joseph Fourier}{}{}
+\cventry{2013-2014}{Master 1 computer science}{International program, MoSIG}{Université Joseph Fourier}{}{}
+\cventry{2012-2013}{Bachelor computer science}{Video games conception}{Université du Québec à Chicoutimi}{}{}
+\cventry{2010-2012}{DUT Informatique (French 2 year diploma)}{IUT 2 de Grenoble}{Université Pierre Mendès-France}{\textit{Rank : 10/84}}{}
+\cventry{2007-2010}{Baccalauréat S-SI (Engineering)}{Lycée Ferdinand Buisson}{}{}{}
+\vspace{4mm}
+\subsection{MOOC}
+\cventry{07.2013-09.2013}{Computer Networks}{https://www.coursera.org/}{Washington university's networks course}{\textit{Grade : 96/100}}{}
+\cventry{10.2011-12.2011}{AI-Class}{https://www.ai-class.com/}{Stanford's introductory Artificial Intelligence course}{\textit{Grade : 98/100}}{}
+\vspace{8mm}
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\centering
+\pgfplotsset{height=4cm,width=15cm}
+\pgfplotsset{xticklabel style={text width=4.8em,align=right}}
+\begin{tikzpicture}
+	\begin{axis}[ybar,
+			enlarge y limits=0,
+			enlarge x limits=0.05,
+			legend style={at={(0.5,-0.2)}, anchor=North, legend columns=-1},
+			symbolic x coords={Bash, Python, OpenStack, Azure, Ceph, Docker, K8S, Ansible, Puppet, HAProxy},
+			symbolic y coords={ X, Basic, Intermediate, Advanced},
+			ymax=Advanced,
+			ymin=X,
+			ytick=data,
+			xtick=data, 
+			grid=both,
+			x tick label style={rotate=35,anchor=east},
+			bar width = 5pt]
+
+		\addplot [fill=s1,draw=s1] coordinates {(Bash,Intermediate)(Python,Advanced)(OpenStack,Intermediate)(Azure,Basic)(Ceph,Intermediate)(Docker,Advanced)(K8S,Basic)(Ansible,Advanced)(Puppet,Intermediate)(HAProxy,Intermediate)};
+	\end{axis}
+\end{tikzpicture}
+
+\pgfplotsset{height=4cm,width=15cm}
+\pgfplotsset{xticklabel style={text width=4.8em,align=right}}
+\begin{tikzpicture}
+	\begin{axis}[ybar,
+			enlarge y limits=0,
+			enlarge x limits=0.05,
+			legend style={at={(0.5,-0.2)}, anchor=North, legend columns=-1},
+			symbolic x coords={Linux, Windows, Networks, VPN, IDS/IPS, Security, Architecture, Monitoring, CI/CD, Policy, Management},
+			symbolic y coords={ X, Basic, Intermediate, Advanced},
+			ymax=Advanced,
+			ymin=X,
+			ytick=data,
+			xtick=data, 
+			grid=both,
+			x tick label style={rotate=35,anchor=east},
+			bar width = 5pt]
+
+		\addplot [fill=s1,draw=s1] coordinates {(Linux,Advanced)(Windows,Basic)(Networks,Advanced)(VPN,Advanced)(IDS/IPS,Advanced)(Security,Advanced)(Architecture,Intermediate)(Monitoring,Advanced)(CI/CD,Intermediate)(Policy,Intermediate)(Management,Basic)};
+	\end{axis}
+\end{tikzpicture}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+\vspace{4mm}
+\section{Languages}
+\cvitemwithcomment{French}{Native}{}
+\cvitemwithcomment{English}{Fluent}{Numerous travels abroad (Irland, UK, US, Canada...) and all work in English}
+\cvitemwithcomment{German}{Basic}{3 years in school}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\section{Experience}
+
+\cventry{05.2021-03.2022}{Systems and Automation Engineer}{\textsc{Infomaniak}}{Geneva}{Switzerland}{
+Part of the team in charge of infrastructure maintenance and improvement.
+\newline L4 Incident response, MCO, automation using Rundeck and Puppet.
+\newline Backup automation and validation with Rundeck.
+\newline SSL Certificate issuance and renewing automation, using Letsencrypt, cfssl.
+\newline CI/CD pipelines development in Gitlab.
+\newline Monitoring using Zabbix, Grafana, Prometheus and ELK.
+\newline K8s administration, containerisation of web services for use in K8s.
+\newline HA Proxy administration, load balancing, filtering, K8s ingresses.
+\newline S3 administration on CEPH RADOS, Provisioning and administration of Ceph, development and maintenance of helper scripts in Python and Bash.
+\newline Migration of legacy services from Xen to Open Stack or K8s.
+\newline 0 downtime operations on Icecast radio clusters.
+\newline Improvement of IPAM solution, with API based DHCP.
+\newline Night and weekend shifts
+\newline}
+
+\cventry{03.2020-04.2021}{IT Security Specialist}{\textsc{MSC}}{Geneva}{Switzerland}{
+Second in charge of EMEA security.
+\newline Migration of most of the infrastructure to Azure.
+\newline Architecturing of Azure services to improve security.
+\newline Deployment and management of worldwide web allow listing policy. Python development of services to streamline requests related to allowlistting policy.
+\newline Monitoring and incident response using Splunk, Azure Sentinel.
+\newline Company wide software upgrades through GPO.
+\newline Designing physical security architecture to protect videosurveillance and identification systems.
+\newline Worldwide level 3 support on security related matters.
+\newline Management of L2 teams in Greece, Brazil and Italy
+\newline}
+
+\cventry{01.2017-02.2020}{IT Security Specialist}{\textsc{Viseo Group}}{Grenoble}{France}{
+In charge of company wide security improvement, maintenance and incident response, as well as IT operations.
+\newline International level 3 IT support for Linux systems, networks and cloud infrastructure.
+\newline Management of L2 teams in Morocco, Philippines and France.
+\newline Introduction of Ansible to manage security controls on all servers of the company.
+\newline Automation of server provisioning inside OVH's Openstack services, migration of all on prem servers to OpenStack.
+\newline Automation of SSH access management using Vault for key storage and Ansible for deployment.
+\newline Upgrading of all legacy web services, contributions to GLPI, Fusion Inventory.
+\newline Introduction, installation and maintenance of Rapid7 InsightVM SIEM solution to manage security on servers and user terminals.
+\newline Introduction and deployment of Microsoft Intune for user terminal management.
+\newline Maintenance of network services using PFSense, installation and upgrade of physical and virtual instances.
+\newline Setup and maintenance of IPSEC VPN links with customers using PFSense.
+\newline}
+
+\cventry{2015-2016}{Cybersecurity Engineer}{\textsc{Thales}}{Montbonnot}{France}{
+Security consulting on an undisclosed SCADA project.
+\newline Applying EBIOS methodology of a critical infrastructure project.
+\newline Automation of SSH based access control.
+\newline Pentesting monitoring, distributed and web services and Scada systems.
+\newline Improvement of architecture for security.
+\newline Design and implementation of security controls using Jenkins
+\newline}
+
+\cventry{2014-2015}{Research Engineer}{\textsc{Inria : Privatics}}{Montbonnot}{France}{
+Research and development of a password guessing algorithm for targeted attacks based on Markov chains.
+\newline Solving performance and memory constraints related to operations on huge datasets. 
+\newline Several talks given about the project and its targets and implications.
+\newline more details : https://team.inria.fr/privatics/omen-leveraging-personal-information-for-password-cracking/
+\newline}
+
+\cventry{03.2014-09.2014}{Research Intern}{\textsc{Inria : Privatics}}{Montbonnot}{France}{
+Feasibility assessment of consumer grade Wi-Fi APs exploitation as a geotracking botnet.
+\newline Reverse engineering of consumer grade internet set top boxes to evaluate the feasibility of deploying large scale, privacy threatening malware.
+\newline More details : https://hal.inria.fr/hal-01151446/document
+\newline}
+
+\cventry{05.2012-06.2012}{Academic internship}{\textsc{Groupe Folder}}{Voiron}{France}{
+Debugging and updating of a client support website in .NET.
+\newline Development of complex SQL queries.
+\newline Implementation and testing of new features in an ASP.NET website.
+\newline Deploy all new features in production.
+\newline}
+
+\vspace{8mm}
+\section{Misc Experiences}
+\cventry{2012}{UQAC}{}{Québec}{Canada}{Design and development of three video games in the context of game jams organized by Ubisoft}
+\cventry{November 2012}{Hackfest}{}{Québec}{Canada}{Participation to the CTF : http://www.hackfest.ca/en/hacking-games/friday}
+\cventry{June 2013}{Nuits du Hack}{}{Paris}{France}{Participation to OVHack and a lockpicking challenge}
+%\vspace{1mm}
+\cventry{Summers}{Carpentery, Electricity meters survey, Mail sorting, Gardening}{}{}{}{}
+%\cventry{Events}{Attended and gave talks, some CTF and lockpicking challenges}{}{}{}{}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+%\section{Interests}
+
+%\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+
+%\cvlistdoubleitem{Mountain sports : Paragliding, ski, hiking}{Motorcycle}
+%\cvlistdoubleitem{Crafting : Blacksmithing, Electronics, DIY}{Corporate security (Tech \& Social)}
+%\cvlistdoubleitem{Permaculture}{Precision Shooting}
+%----------------------------------------------------------------------------------------
+
+\end{document}
